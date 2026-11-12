@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار العجوز نادية شجن</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- الصفحة الأولى: صورة الجدة فقط (كأنها زر للبدء) -->
+        <div id="landing-screen" class="screen active">
+            <div class="landing-box">
+                <h2>اضغطِ على الجدة نادية عشان نبدأ نتعرف !</h2>
+                <img src="images/granny_hi.jpg" alt="الجدة نادية" class="sticker-granny-btn" onclick="openIntro()">
+                <p class="tap-hint">👆   هلا  يا بنتي اضغطِ</p>
+            </div>
+        </div>
+
+        <!-- قسم المقدمة (يظهر بعد ضغط الجدة) -->
+        <div id="intro-screen" class="screen">
+            <div class="speech-bubble">
+                <h2>يا هلا!</h2>
+                <p>أنا نادية العجوز... لا لا خلوني زي ما تعرفوني، نادية شجن!</p>
+                <p>تعالي يا بنتي اجلسي جنبي، بسألك كم سؤال وأشوف إنتِ من أي نوع… لاتكذبي عليّا.</p>
+                <p>أنا ناديه شجن وعارفه الحركات هذي كلها!</p>
+                
+                <!-- عنصر المدينة (Label, Select, Option) -->
+                <div class="city-box">
+                    <label for="user-city">يا بنتي، من أي مدينة منوّرة الاختبار؟</label>
+                    <select id="user-city">
+                        <option value="كريتر">كريتر (قلب العاصمة)</option>
+                        <option value="المعلا">المعلا (رواقة الشارع)</option>
+                        <option value="الشيخ عثمان">الشيخ عثمان (زحمة وسوق)</option>
+                        <option value="التواهي">التواهي (نسيم البحر)</option>
+                        <option value="المنصورة">المنصورة (الحياة والسرعة)</option>
+                        <option value="مكان ثاني">مدينة ثانية (منورة والله)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn" onclick="startQuiz()">خلينا يا جدتي، نبدأ</button>
+        </div>
+
+        <!-- قسم الأسئلة -->
+        <div id="quiz-screen" class="screen">
+            <div class="question-box">
+                <span id="question-number">السؤال 1 من 10</span>
+                <h3 id="question-text">نص السؤال هنا</h3>
+                <div class="options-list" id="options-container">
+                    <!-- خيارات الإجابة ستضاف برمجياً -->
+                </div>
+                
+                <!-- أزرار التنقل (السابق ) -->
+                <div class="nav-buttons">
+                    <button id="prev-btn" class="btn secondary-btn" onclick="prevQuestion()">السابق</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم النتيجة -->
+        <div id="result-screen" class="screen">
+            <div class="speech-bubble" id="result-content">
+                <!-- النتيجة تظهر هنا -->
+            </div>
+            <button class="btn" onclick="resetQuiz()">تعالي اسألك من جديد</button>
+        </div>
+    </div>
+
+    <!-- صورة الجدة الجانبية الثابتة (تظهر خلال الأسئلة) -->
+    <div class="granny-container" id="side-granny" style="display: none;">
+        <img id="granny-img" src="images/granny_normal.jpg" alt="الجدة نادية" class="sticker-img">
+        <div class="granny-name">الجدة نادية شجن</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
